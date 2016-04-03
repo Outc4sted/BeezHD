@@ -1,0 +1,30 @@
+{
+  "name": "BeezHD",
+  "version": "0.0.1",
+  "description": "A residential window cleaning service",
+  "homepage": "https://github.com/Outc4sted/BeezHD",
+  "contributors": [
+    {
+      "name": "Justen Falk",
+      "email": "justenfalk@gmail.com"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/Outc4sted/BeezHD/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Outc4sted/BeezHD.git"
+  },
+  "dependencies": {
+    "express": "4.4.x",
+    "jade": "*",
+    "stylus": "*",
+    "coffee-script": "*",
+    "connect-assets": "3.x",
+    "supervisor": "*"
+  },
+  "engines": {
+    "node": ">=0.12.0"
+  }
+}

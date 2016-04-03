@@ -1,0 +1,144 @@
+.row.panel.callout#banner
+    .small-7.large-6.columns
+        p
+            | Beez Window Detailing is a fresh startup that provides consumer window washing services at a great value.
+            | We're just a handful of people that turn sweat equity into customer satisfaction.
+        br
+        p
+            | Take a look below to see our simple pricing and a description of our services.
+            | If you have any questions about our services (or would like hire us!) we'd love to hear from you.
+
+    .small-5.large-6.columns
+        .row
+            .small-12.columns
+                .panel.promo
+                    i.fa.fa-flag-checkered.fa-2x
+                    span  Promotional Offer!
+                    div Mention this ad when we come out and for being one of our first customers we'll do your car's windows too!
+
+        .panel#contact-us
+            div
+                .fa-stack
+                    i.fa.fa-square.fa-stack-2x
+                    i.fa.fa-location-arrow.fa-inverse.fa-stack-1x
+                span.info We're located in Royal Oak, MI
+            div
+                i.fa.fa-envelope-square.fa-2x
+                span.info Email us at
+                    a(href="mailto:services@beezhd.com?Subject=I\'m%20interested%20in%20some%20window%20services")  services@beezhd.com
+
+.row#services
+    h4 Services
+
+    .small-12.columns
+        ul.small-block-grid-4
+            li
+                ul.pricing-table
+                    li.title.absurd-package Exterior Windows
+                    li.description We'll wash all the exterior windows which will make your home look a little nicer and a little brighter.
+
+            li
+                ul.pricing-table
+                    li.title.deluxe-package Interior Windows
+                    li.description Complete the look by having us come into your home to wash the interior window surfaces.
+
+            li
+                ul.pricing-table
+                    li.title.premium-package Sills and Shutters
+                    li.description
+                        | Cleaning sills and shutters likely isn't at the top of your things-I-want-to-do list.
+                        br
+                        | We can wash those, too.
+            li
+                ul.pricing-table
+                    li.title.standard-package Vehicle Windows
+                    li.description How long have you been tuning out the smudges and dirt on your windshield? We'll clear that up for you inside and out.
+
+.row#pricing
+    h4 Pricing
+
+    .small-6.large-3.columns
+        mixin prices(a,b,c,d)
+            li.bullet-item.absurd-package
+                span Exterior Windows
+                span.right $
+                    span=a
+            li.bullet-item.deluxe-package
+                span Interior Windows & Sills
+                span.right $
+                    span=b
+            li.bullet-item.premium-package
+                span Sills & Shutters
+                span.sills
+                    span.right 1-story $
+                        span=c
+                    div 2-story $
+                        span=d
+            li.bullet-item Save even more when you subscribe to a monthly plan
+
+        ul.pricing-table
+            li.title Small Home
+            li.price
+                .starting-price Starting at
+                | $25
+            li.description
+                | For homes up to 1200 square-foot
+            +prices(25,25,10,19)
+
+    .small-6.large-3.columns
+        ul.pricing-table
+            li.title Mid-size Home
+            li.price
+                .starting-price Starting at
+                | $39
+            li.description
+                | Your in this tier if your home has multiple stories or is up to 1600 square-foot.
+            +prices(39,39,19,29)
+
+    .small-6.large-3.columns
+        ul.pricing-table
+            li.title Large Home
+            li.price
+                .starting-price Starting at
+                | $69
+            li.description
+                | The starting price for this tier will cover homes up to about 2000 square-foot.
+            +prices(69,69,49,69)
+
+    .small-6.large-3.columns.end
+        ul.pricing-table
+            li.title XLarge Home
+            li.price
+                .starting-price Starting at
+                | $99
+            li.description
+                | Homes in this category could be up to 2400 square-foot
+                div Larger homes will be dealt with on a case-by-case basis.
+            +prices(99,99,79,99)
+
+.row#get-in-touch
+    h4 Interested?
+    .small-12.columns.panel.callout
+        span If you're interested in requesting our services, receiving a quote, or have any questions you'll hear back from us asap.
+        a.right(href="#", onclick="highlightContactInfo()") Back to top
+
+script.
+    function highlightContactInfo() {
+        window.scrollTo(0, 0);
+        blink(3);
+
+        $(".fa-location-arrow")
+            .css({color: '#e4d200'})
+            .delay(1000)
+            .animate({color: "#f2f2f2"}, 'fast');
+    };
+
+    function blink(blinks, next) {
+        blinks -= 1;
+        next = blinks ? blink : function(){};
+
+        $("#contact-us")
+            .css({background: '#e4d200'})
+            .delay(175)
+            .animate({backgroundColor: "#f2f2f2"}, 'fast', 'swing', function(){next(blinks)});
+    };
